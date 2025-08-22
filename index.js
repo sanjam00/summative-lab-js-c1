@@ -1,7 +1,7 @@
-// empty array to store caluclations
+//Empty array to store caluclations
 let history = []
 
-//to add and store a new calculation to the array
+//Add and store a new calculation to the array
 function addCalc(operator, operand, result) {
     let newCalc = {
         operator: operator,
@@ -13,7 +13,7 @@ function addCalc(operator, operand, result) {
 
 function add(a, b) {
     let result = a + b;
-    addCalc('add', [a, b], result);
+    addCalc('add', [a, b], result); //calls on the addCalc function to push the completed calculation to the array
     return result;
 }
 
@@ -30,7 +30,6 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    //need to write a loop that will run through these options until b !== 0
     if (b === 0) {
         console.log("Error: cannot divide by 0.");
     } else {
@@ -40,6 +39,7 @@ function divide(a, b) {
     }
 }
 
+//Display calculation history
 function displayHistory() {
     if (history.length === 0) {
         console.log("There are is no calculation history.");
@@ -50,10 +50,3 @@ function displayHistory() {
         }
     }
 }
-
-// console.log(divide(10, 0));
-console.log(divide(10, 1));
-console.log(divide(10, 2));
-
-displayHistory();
-
